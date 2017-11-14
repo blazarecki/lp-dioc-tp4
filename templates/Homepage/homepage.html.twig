@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title 'Homepage' %}
+{% block title 'Homepage' %}
+
+{% block body %}
+    <p>Welcome to TP4!</p>
+
+    {#
+     FIXME:
+        Lister les utilisateurs mais pas les admins.
+        L'utilisateur actuelement connecté doit être en gras.
+        Au clique sur un utilisateur je suis redirigé sur sa page de profile
+     #}
+
+    <ul>
+            <li>
+                <strong><a href="/profile/1">John Doe - user@exemple.com</a></strong>
+                <a href="/profile/2">Foo Bar - foo@exemple.com</a>
+            </li>
+    </ul>
+{% endblock %}
