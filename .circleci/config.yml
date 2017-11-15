@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: blazarecki/symfony:7.2
+
+    environment:
+      APP_ENV: test
+      APP_DEBUG: 1
+      APP_SECRET: 97228e7b10ee355da6dc48c9447bca27
+
+    working_directory: ~/app
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "composer.json" }}
+          - v1-dependencies-
+
+      - run: composer install -n --prefer-dist --no-progress
+
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
+
+      - run: vendor/bin/simple-phpunit
