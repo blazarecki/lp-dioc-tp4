@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class UserController extends Controller
 {
     /**
-     * // FIXME: la route doit être /my_profile
+     * // FIXME: la route doit être /my_profile.
      */
     public function myProfileAction()
     {
@@ -17,7 +17,7 @@ class UserController extends Controller
     }
 
     /**
-     * // FIXME: la route doit être /profile/3 par exemple
+     * // FIXME: la route doit être /profile/3 par exemple.
      */
     public function profileAction(User $user)
     {

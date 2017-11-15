@@ -62,14 +62,14 @@ class SecurityScenarioTest extends \Liip\FunctionalTestBundle\Test\WebTestCase
 
         $form = $crawler->selectButton('register')->form();
         $form->setValues([
-            'user[firstname]' => 'Foo',
-            'user[lastname]' => 'Bar',
-            'user[email]' => $email = 'foo@exemple.org',
-            'user[plainPassword][first]' => $password = 'password',
+            'user[firstname]'             => 'Foo',
+            'user[lastname]'              => 'Bar',
+            'user[email]'                 => $email = 'foo@exemple.org',
+            'user[plainPassword][first]'  => $password = 'password',
             'user[plainPassword][second]' => 'password',
-            'user[birthday][year]' => '1990',
-            'user[birthday][month]' => '10',
-            'user[birthday][day]' => '1',
+            'user[birthday][year]'        => '1990',
+            'user[birthday][month]'       => '10',
+            'user[birthday][day]'         => '1',
         ]);
         $client->submit($form);
 

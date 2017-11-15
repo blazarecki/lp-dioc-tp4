@@ -161,7 +161,6 @@ class User implements UserInterface, \Serializable
      */
     public function getSalt()
     {
-        return;
     }
 
     /**
@@ -177,7 +176,6 @@ class User implements UserInterface, \Serializable
      */
     public function eraseCredentials()
     {
-        return;
     }
 
     /**
@@ -185,14 +183,14 @@ class User implements UserInterface, \Serializable
      */
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->id,
             $this->email,
             $this->firstname,
             $this->lastname,
             $this->isAdmin,
             $this->password,
-        ));
+        ]);
     }
 
     /**
@@ -200,13 +198,12 @@ class User implements UserInterface, \Serializable
      */
     public function unserialize($serialized)
     {
-        list (
+        list(
             $this->id,
             $this->email,
             $this->firstname,
             $this->lastname,
             $this->isAdmin,
-            $this->password,
-        ) = unserialize($serialized);
+            $this->password) = unserialize($serialized);
     }
 }
