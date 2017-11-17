@@ -4,21 +4,14 @@
 {% block title 'Admin Dashboard' %}
 
 {% block body %}
-    {# FIXME: Afficher Hello <firstname> <lastname> #}
-    Hello John Doe
-
-
-    {# FIXME: Lister les utilisateurs et afficher un lien de suppression #}
+    Hello {{ app.user.firstname }} {{ app.user.lastname }}
 
     <ul>
+    {% for user in users %}
         <li>
-            <a href="/profile/1">John Doe - foo@exemple.org</a>
-            <a href="/admin//delete-user/1">delete</a>
+            <a href="{{ path('user_profile', {'id': user.id}) }}">{{ user.firstname }} {{ user.lastname }} - {{ user.email }}</a>
+            <a href="{{ path('user_delete', {'id': user.id}) }}">delete</a>
         </li>
-        <li>
-            <a href="/profile/2">Foo Bar - foo@exemple.org</a>
-            <a href="/admin//delete-user/2">delete</a>
-
-        </li>
+    {% endfor %}
     </ul>
 {% endblock %}

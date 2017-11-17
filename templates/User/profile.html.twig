@@ -4,18 +4,10 @@
 {% block title %}{{ user.firstname }} {{ user.lastname }} Profile{% endblock %}
 
 {% block body %}
-    {#
-        Fixme afficher sous forme de <ul> <li>
-        firstname
-        lastname
-        email
-        birthday
-    #}
-
     <ul>
-        <li>First name: Foo</li>
-        <li>Last name: Bar</li>
-        <li>Email: foo.bar@exemple.org</li>
-        <li>Birthday: January 1, 1980 00:00</li>
+        <li>First name: {{ user.firstname }}</li>
+        <li>Last name: {{ user.lastname }}</li>
+        <li>Email: {{ user.email }}</li>
+        <li>Birthday: {{ user.birthday|date }}</li>
     </ul>
 {% endblock %}

@@ -4,15 +4,9 @@
 {% block title 'Register' %}
 
 {% block body %}
-    {#
-        FIXME:
-        Affiche le formulaire d'inscription avec les champs
-        firstname
-        lastname
-        email
-        password (répété)
-        birthday
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
 
-    #}
-    <input type="submit" value="register" />
+        <input type="submit" value="register" />
+    {{ form_end(form) }}
 {% endblock %}

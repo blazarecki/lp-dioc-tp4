@@ -4,22 +4,12 @@
 {% block title 'My Profile' %}
 
 {% block body %}
-    {#
-        Fixme afficher sous forme de <ul> <li>
-        firstname
-        lastname
-        email
-        birthday
-        createAt
-        updatedAt
-    #}
-
     <ul>
-        <li>First name: Foo</li>
-        <li>Last name: Bar</li>
-        <li>Email: user@exemple.org</li>
-        <li>Birthday: January 1, 1980 00:00</li>
-        <li>Created at: January 1, 2017 00:00</li>
-        <li>Updated at: January 2, 2017 00:00</li>
+        <li>First name: {{ app.user.firstname }}</li>
+        <li>Last name: {{ app.user.lastname }}</li>
+        <li>Email: {{ app.user.email }}</li>
+        <li>Birthday: {{ app.user.birthday|date }}</li>
+        <li>Created at: {{ app.user.createdAt|date }}</li>
+        <li>Updated at: {{ app.user.updatedAt|date }}</li>
     </ul>
 {% endblock %}
